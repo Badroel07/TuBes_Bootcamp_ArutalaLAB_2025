@@ -14,6 +14,7 @@ public class Program_Perpajakan{
         double disc_tanggungan = 0;
         double disc_sektor = 0;
         double total = 0;
+        String kategori;
 
     
         System.out.println("======= Selamat datang di Program Perpajakan 2025 =======\n");
@@ -56,6 +57,7 @@ public class Program_Perpajakan{
         //Kelas I
         if (penghasilan_tahunan <= 50000000) {
             tarif_pajak = penghasilan_tahunan * (5.0/100);
+            kategori = "Kelas I";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
             } else {
@@ -64,14 +66,16 @@ public class Program_Perpajakan{
         //Kelas II
         } else if (penghasilan_tahunan <= 100000000) {
             tarif_pajak = penghasilan_tahunan * (10.0/100);
+            kategori = "Kelas II";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
         //Kelas III
-        } else if (penghasilan_tahunan <= 200000000) {
+        } else if (penghasilan_tahunan <= 250000000) {
             tarif_pajak = penghasilan_tahunan * (15.0/100);
+            kategori = "Kelas III";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
             } else {
@@ -80,34 +84,32 @@ public class Program_Perpajakan{
         //Kelas IV
         } else if (penghasilan_tahunan <= 500000000) {
             tarif_pajak = penghasilan_tahunan * (20.0/100);
+            kategori = "Kelas IV";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
-        } else if (penghasilan_tahunan <= 500000000) {
-            tarif_pajak = penghasilan_tahunan * (20.0/100);
-            if (pekerja_lepas.equalsIgnoreCase("Y")) {
-                pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
-            } else {
-                pekerja_lepas_pajak = 0;
-            }  
         //Kelas V
         } else if (penghasilan_tahunan <= 1000000000) {
             tarif_pajak = penghasilan_tahunan * (25.0/100);
+            kategori = "Kelas V";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
         //Kelas VI
-        } else {
+        } else if (penghasilan_tahunan > 1000000000) {
             tarif_pajak = penghasilan_tahunan * (30.0/100);
+            kategori = "Kelas VI";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
+        } else {
+            System.out.println("Penghasilan tahunan tidak valid.");
         }
 
         switch (sektor_pekerjaan) {
