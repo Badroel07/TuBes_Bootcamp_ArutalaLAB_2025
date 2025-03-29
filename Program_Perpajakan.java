@@ -14,7 +14,7 @@ public class Program_Perpajakan{
         double disc_tanggungan = 0;
         double disc_sektor = 0;
         double total = 0;
-        String kategori;
+        String kategori = null;
 
     
         System.out.println("======= Selamat datang di Program Perpajakan 2025 =======\n");
@@ -147,14 +147,18 @@ public class Program_Perpajakan{
         total = tarif_pajak - disc_tanggungan - disc_sektor + pekerja_lepas_pajak;
     
         //OUTPUT
-        System.out.println("Hasil Perhitungan Pajak:\n");
+        System.out.println("\nHasil Perhitungan Pajak:\n");
+        System.out.println("=========================================================");
+        System.out.println("Kategori Penghasilan: " + kategori);
+        System.out.println("---------------------------------------------------------");
         System.out.println("Pajak Sebelum Diskon: Rp" + String.format("%.2f", tarif_pajak));
+        System.out.println("---------------------------------------------------------");
         System.out.println("Diskon Tanggungan: Rp" + String.format("%.2f", disc_tanggungan));
+        System.out.println("---------------------------------------------------------");
         System.out.println("Diskon Sektor Pekerjaan: Rp" + String.format("%.2f", disc_sektor));
+        System.out.println("---------------------------------------------------------");
         System.out.println("Total Pajak yang Harus Dibayar: Rp" + String.format("%.2f", total));
         System.out.println("=========================================================");
-        
-
     
     }
 }
