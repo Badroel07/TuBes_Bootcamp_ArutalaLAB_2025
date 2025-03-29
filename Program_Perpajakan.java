@@ -1,4 +1,3 @@
-import java.util.*;
 import java.util.Scanner;
 
 public class Program_Perpajakan{
@@ -14,7 +13,8 @@ public class Program_Perpajakan{
         double disc_tanggungan = 0;
         double disc_sektor = 0;
         double total = 0;
-        String kategori = null;
+        String[] kategori = {"","Kelas I","Kelas II","Kelas III","Kelas IV","Kelas V","Kelas VI"};
+        int i = 0;
 
     
         System.out.println("======= Selamat datang di Program Perpajakan 2025 =======\n");
@@ -57,7 +57,7 @@ public class Program_Perpajakan{
         //Kelas I
         if (penghasilan_tahunan <= 50000000) {
             tarif_pajak = penghasilan_tahunan * (5.0/100);
-            kategori = "Kelas I";
+            i = 1;
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
@@ -66,7 +66,7 @@ public class Program_Perpajakan{
         //Kelas II
         } else if (penghasilan_tahunan <= 100000000) {
             tarif_pajak = penghasilan_tahunan * (10.0/100);
-            kategori = "Kelas II";
+            i = 2;
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
@@ -75,7 +75,7 @@ public class Program_Perpajakan{
         //Kelas III
         } else if (penghasilan_tahunan <= 250000000) {
             tarif_pajak = penghasilan_tahunan * (15.0/100);
-            kategori = "Kelas III";
+            i = 3;
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
@@ -84,7 +84,7 @@ public class Program_Perpajakan{
         //Kelas IV
         } else if (penghasilan_tahunan <= 500000000) {
             tarif_pajak = penghasilan_tahunan * (20.0/100);
-            kategori = "Kelas IV";
+            i = 4;
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
@@ -93,7 +93,7 @@ public class Program_Perpajakan{
         //Kelas V
         } else if (penghasilan_tahunan <= 1000000000) {
             tarif_pajak = penghasilan_tahunan * (25.0/100);
-            kategori = "Kelas V";
+            i = 5;
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
@@ -102,7 +102,7 @@ public class Program_Perpajakan{
         //Kelas VI
         } else if (penghasilan_tahunan > 1000000000) {
             tarif_pajak = penghasilan_tahunan * (30.0/100);
-            kategori = "Kelas VI";
+            i = 6;
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
                 pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
@@ -149,7 +149,7 @@ public class Program_Perpajakan{
         //OUTPUT
         System.out.println("\nHasil Perhitungan Pajak:\n");
         System.out.println("=========================================================");
-        System.out.println("Kategori Penghasilan: " + kategori);
+        System.out.println("Kategori Penghasilan: " + kategori[i]);
         System.out.println("---------------------------------------------------------");
         System.out.println("Pajak Sebelum Diskon: Rp" + String.format("%.2f", tarif_pajak));
         System.out.println("---------------------------------------------------------");
