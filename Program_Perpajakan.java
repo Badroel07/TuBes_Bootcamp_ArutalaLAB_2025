@@ -59,7 +59,7 @@ public class Program_Perpajakan{
             tarif_pajak = penghasilan_tahunan * (5.0/100);
             kategori = "Kelas I";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
-                pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
+                pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
@@ -68,7 +68,7 @@ public class Program_Perpajakan{
             tarif_pajak = penghasilan_tahunan * (10.0/100);
             kategori = "Kelas II";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
-                pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
+                pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
@@ -77,7 +77,7 @@ public class Program_Perpajakan{
             tarif_pajak = penghasilan_tahunan * (15.0/100);
             kategori = "Kelas III";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
-                pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
+                pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
@@ -86,7 +86,7 @@ public class Program_Perpajakan{
             tarif_pajak = penghasilan_tahunan * (20.0/100);
             kategori = "Kelas IV";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
-                pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
+                pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
@@ -95,7 +95,7 @@ public class Program_Perpajakan{
             tarif_pajak = penghasilan_tahunan * (25.0/100);
             kategori = "Kelas V";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
-                pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
+                pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
@@ -104,7 +104,7 @@ public class Program_Perpajakan{
             tarif_pajak = penghasilan_tahunan * (30.0/100);
             kategori = "Kelas VI";
             if (pekerja_lepas.equalsIgnoreCase("Y")) {
-                pekerja_lepas_pajak = penghasilan_tahunan * (2.0/100);
+                pekerja_lepas_pajak = tarif_pajak * (2.0/100);
             } else {
                 pekerja_lepas_pajak = 0;
             }
